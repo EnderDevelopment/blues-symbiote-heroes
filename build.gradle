@@ -1,0 +1,40 @@
+plugins {
+    id 'net.neoforged.gradle.userdev' version '7.0.100'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'NeoForge'
+        url = 'https://maven.neoforged.net/releases'
+    }
+}
+
+extraProperties {
+    mod_version = project.property('mod_version')
+    minecraft_version = project.property('minecraft_version')
+    loader_version = project.property('loader_version')
+    maven_group = project.property('maven_group')
+    archives_base_name = project.property('archives_base_name')
+}
+
+dependencies {
+    minecraft {
+        mappings 'official'
+        runs {
+            client {
+                version minecraft_version
+                property 'forge.logging.markers', 'MC'
+            }
+            server {
+                version minecraft_version
+                property 'forge.logging.markers', 'SERVER'
+            }
+        }
+    }
+}
+
+processResources {
+    inputs.property 'version', mod_version
+    inputs.property 'mcversion', minecraft_version
+}

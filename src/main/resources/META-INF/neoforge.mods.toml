@@ -1,0 +1,21 @@
+[mods]
+modId="spiderman2"
+displayName="Spider-Man 2 Mod"
+version="${file.jarVersion}"
+credits="EnderDevelopment"
+authors="EnderDevelopment"
+description="A Minecraft mod inspired by Insomniac's Spider-Man 2."
+
+[[dependencies.spiderman2]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.spiderman2]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,)"
+ordering="NONE"
+side="BOTH"
